@@ -36,6 +36,7 @@ func makeHTTPHandleFunc(f APIFunc) http.HandlerFunc {
 
 // APIServer is a struct in charge of holding some server data
 type APIServer struct {
+    store Storage
 	listenAddr string
 }
 
@@ -43,6 +44,7 @@ type APIServer struct {
 func NewAPIServer(listenAddr string) *APIServer {
 	return &APIServer{
 		listenAddr: listenAddr,
+        store Storage,
 	}
 }
 
